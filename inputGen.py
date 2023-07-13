@@ -52,7 +52,7 @@ def main():
     # use parallelism to write xml files 
     Parallel(n_jobs=-1, verbose=1)\
             (delayed(create_xml)(
-                    template=tpl, param_map=param, dout=opt
+                    template=tpl, param_map=params[i], idx=i, dout=opt
                 )
-            for param in params
+            for i in range(n)
         )
