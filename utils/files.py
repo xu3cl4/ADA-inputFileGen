@@ -18,6 +18,8 @@ def create_pflo(template_pflo, param_map, idx, dout):
     tpl_str = tpl.read()
     tpl.close()
 
+    tpl_str = tpl_str.replace(f"@{idx}@", idx)
+
     # replace the parameters (except recharge), using the param_map
     for key in param_map:
         tpl_str = tpl_str.replace(key, param_formatter(param_map[key]))
@@ -39,6 +41,8 @@ def create_xml(template_xml, param_map, idx, dout):
     tpl = open(template_xml, 'rt') 
     tpl_str = tpl.read()
     tpl.close()
+
+    tpl_str = tpl_str.replace(f"@{idx}@", idx)
 
     # replace the parameters (except recharge), using the param_map
     for key in param_map:

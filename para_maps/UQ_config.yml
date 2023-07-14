@@ -1,0 +1,43 @@
+---
+amanzi:
+  # permeability 
+  "@k_u@": 
+    low: 2.5e-12 
+    up: 7.5e-12
+  # porosity 
+  "@phi_u@":
+    low: 0.312
+    up: 0.468
+  "@alph_u@": 
+    low: 3.2e-4
+    up: 4.8e-4
+  "@m_u@": 
+    low: 0.216
+    up: 0.324
+  "@sr_u@":
+    low: 0.144
+    up: 0.216
+  # recharge before 1955 
+  "@r_hist@":
+    low: 2.0e-6
+    up: 1.0e-5
+  # recharge for seepage btw 1955 and 1988 
+  "@r_mid@":
+    low: 1.0e-4
+    up: 2.5e-4
+  "@ET_factor@": 
+    low: 0.8
+    up: 1.2
+pflo: 
+  "@ph_seepage@":
+    low: 1.364
+    up: 1.841
+  "@tri_conc_seepage@":
+    low: 1.0e-9
+    up: 1.0e-8
+  "@al_conc_seepage": 
+    low: 5.0e-9
+    up: 1.5e-8
+  "@uran_conc_seepage@":
+    low: 1.51e-5
+    up: 4.52e-5
