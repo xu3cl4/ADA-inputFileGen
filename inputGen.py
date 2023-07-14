@@ -3,7 +3,6 @@ from argparse import ArgumentParser, RawTextHelpFormatter as RT
 from pathlib  import Path
 from joblib   import Parallel, delayed
 
-
 # import from personal modules 
 from utils.params import getParams
 from utils.files  import create_files
@@ -28,12 +27,6 @@ def getArguemnts():
     parser.add_argument('-tpl_pflo', type = str, help="the file path to a xml template in the template folder", default="")
     parser.add_argument('opt',       type = str, help="the directory to store xml files")
     parser.add_argument('-s',        type = int, help="the seed to set up the samples from the parameter space", default=108)
-    parser.add_argument('-smethod',  type = str, help=
-        '''
-        the sampling method over the parameter space: 
-            LHS (Latin Hypercube)
-            U (uniform)
-        ''', default="LHS")
 
     return parser.parse_args()
 
@@ -49,7 +42,7 @@ def main():
 
     # sample from the parameter space 
     # params is a list of parameter maps
-    params = getParams(n, ipt, args.s, args.smethod)
+    params = getParams(n, ipt, args.s)
 
     # use parallelism to write xml files 
     Parallel(n_jobs=-1, verbose=1)\
