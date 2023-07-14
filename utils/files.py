@@ -28,6 +28,8 @@ def create_pflo(template_pflo, param_map, idx, dout):
     fname = dout.joinpath(f"farea-full_nem{idx}.in")
     with open(fname, "w") as fout:
         fout.writelines(tpl_str)
+    
+    return 
 
 def create_xml(template_xml, param_map, idx, dout):
     ''' the workflow of the helper function:
@@ -42,7 +44,7 @@ def create_xml(template_xml, param_map, idx, dout):
     tpl_str = tpl.read()
     tpl.close()
 
-    tpl_str = tpl_str.replace(f"@{idx}@", idx)
+    tpl_str = tpl_str.replace("@idx@", idx)
 
     # replace the parameters (except recharge), using the param_map
     for key in param_map:
@@ -58,6 +60,7 @@ def create_xml(template_xml, param_map, idx, dout):
     with open(fname, "w") as fout:
         fout.writelines(tpl_str)
 
+    return 
 
 def create_files(template_xml, template_pflo, param_map, idx, dout):
 
@@ -65,4 +68,7 @@ def create_files(template_xml, template_pflo, param_map, idx, dout):
     create_xml(template_xml, param_map["amanzi"], idx, dout)
 
     # create dat file for pflotran 
-    create_pflo(template_pflo, param_map["pflo"], idx, dout)
+    if template_pflo is not None:
+        create_pflo(template_pflo, param_map["pflo"], idx, dout)
+    
+    return 
