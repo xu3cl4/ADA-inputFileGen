@@ -25,7 +25,7 @@ def create_pflo(template_pflo, param_map, idx, dout):
 
     # replace the parameters (except recharge), using the param_map
     for key in param_map:
-        tpl_str = tpl_str.replace(key, param_formatter(param_map[key]))
+        tpl_str = tpl_str.replace(key, param_map[key])
 
     # write to a xml file 
     fname = dout.joinpath(f"farea-full_nem{idx}.in")
@@ -52,7 +52,7 @@ def create_xml(template_xml, param_map, idx, dout):
     # replace the parameters (except recharge), using the param_map
     for key in param_map:
         if key == '@ET_factor@': continue 
-        tpl_str = tpl_str.replace(key, param_formatter(param_map[key]))
+        tpl_str = tpl_str.replace(key, param_map[key])
 
     # replace recharge value 
     factor = param_map['@ET_factor@'] 
@@ -76,9 +76,9 @@ def create_xml(template_xml, param_map, idx, dout):
         r_right, r_left, r_seepage = '', '', ''
         for idx, row in matched.iterrows():
             r_right += f'<seepage_face function="constant" start="{row["Timestamp"]}" inward_mass_flux="{row["recharge"]}"\n' 
-            r_left += f'<inward_mass_flux function="constant" start="{row["Timestamp]}" value="{row["recharge"]}"\n'
+            r_left += f'<inward_mass_flux function="constant" start="{row["Timestamp"]}" value="{row["recharge"]}"\n'
             if row["Timestamp"] >= ref_1989: 
-                r_seepage += f'<inward_mass_flux function="constant" start="{row["Timestamp]}" value="{row["recharge"]/1000}"\n'
+                r_seepage += f'<inward_mass_flux function="constant" start="{row["Timestamp"]}" value="{row["recharge"]/1000}"\n'
         
         tpl_str = tpl_str.replace("@r_right@", r_right)
         tpl_str = tpl_str.replace("@r_left@", r_left)
