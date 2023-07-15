@@ -57,9 +57,9 @@ def create_xml(template_xml, param_map, idx, dout):
     # replace recharge value 
     factor = param_map['@ET_factor@'] 
     if factor is not None:
-        '''time, prep'''
+        # time, prep
         df_prep = pd.read_csv(FPATH_prep)
-        '''time, et'''
+        # time, et
         df_et = pd.read_csv(FPATH_ET) 
         
         matched = df_prep.merge(df_et, how='inner', on='time')
@@ -70,15 +70,15 @@ def create_xml(template_xml, param_map, idx, dout):
         month = 2.592e+06
 
         # compute the timestamps 
-        matched['Time'] = pd.to_datetime(matched["Time"], format="%Y/%m")
+        matched['Time'] = pd.to_datetime(matched["Time"], format="%Y/%m/%d")
         matched['Timestamp'] = ( (matched['Time'].dt.year - 1955)*12 + matched['Time'].dt.month )*month + ref_1955 
         
         r_right, r_left, r_seepage = '', '', ''
         for idx, row in matched.iterrows():
-            r_right += f'<seepage_face function="constant" start="{row["Timestamp"]}" inward_mass_flux="{row["recharge"]}"\n' 
-            r_left += f'<inward_mass_flux function="constant" start="{row["Timestamp"]}" value="{row["recharge"]}"\n'
+            r_right += f'<seepage_face function="constant" start="{row["Timestamp"]}" inward_mass_flux="{row["recharge"]}/>"\n' 
+            r_left += f'<inward_mass_flux function="constant" start="{row["Timestamp"]}" value="{row["recharge"]}"/>\n'
             if row["Timestamp"] >= ref_1989: 
-                r_seepage += f'<inward_mass_flux function="constant" start="{row["Timestamp"]}" value="{row["recharge"]/1000}"\n'
+                r_seepage += f'<inward_mass_flux function="constant" start="{row["Timestamp"]}" value="{row["recharge"]/1000}"/>\n'
         
         tpl_str = tpl_str.replace("@r_right@", r_right)
         tpl_str = tpl_str.replace("@r_left@", r_left)
