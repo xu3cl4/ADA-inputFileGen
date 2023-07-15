@@ -1,6 +1,9 @@
 # import built-in modules 
 from pathlib import Path
 
+import pandas as pd 
+
+
 FPATH = Path(__file__)
 PATH_recharge = FPATH.parent.parent.joinpath('recharge_data')
 PATH_prep = PATH_recharge.joinpath('prep.csv')
@@ -52,8 +55,19 @@ def create_xml(template_xml, param_map, idx, dout):
         tpl_str = tpl_str.replace(key, param_formatter(param_map[key]))
 
     # replace recharge value 
-    if param_map['@ET_factor@'] is not None:
-        pass 
+    factor = param_map['@ET_factor@'] 
+    if factor is not None:
+        '''time, prep'''
+        df_prep = pd.read_csv(FPATH_prep)
+        '''time, et'''
+        df_et = pd.read_csv(FPATH_ET) 
+        
+        matched = df_prep.merge(df_et, how='inner', on='time')
+        matched['recharge'] = (matched['prep'] - factor*matched['et'])
+        
+        ref = 6.16635504e+10 # 1955 
+        month = 2.592e+06
+        pass  
 
     # write to a xml file 
     fname = dout.joinpath(f"sim{idx}.xml")

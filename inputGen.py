@@ -26,7 +26,7 @@ def getArguemnts():
     parser.add_argument('tpl_xml',   type = str, help="the file path to a xml template in the template folder")
     parser.add_argument('-tpl_pflo', type = str, help="the file path to a xml template in the template folder", default="")
     parser.add_argument('opt',       type = str, help="the directory to store xml files")
-    parser.add_argument('-s',        type = int, help="the seed to set up the samples from the parameter space", default=108)
+    parser.add_argument('-s',        type = int, help="the seed to set up the samples from the parameter space", default=960108)
 
     return parser.parse_args()
 

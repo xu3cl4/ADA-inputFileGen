@@ -21,7 +21,7 @@
       </time_macro>
 
        <time_macro name="every month">
-        <start>1954.01 y</start>
+        <start>6.16635504e+10</start>
         <timestep_interval>2.592e+06</timestep_interval>
         <stop>2023.0 y</stop>
       </time_macro>
