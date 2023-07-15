@@ -65,9 +65,24 @@ def create_xml(template_xml, param_map, idx, dout):
         matched = df_prep.merge(df_et, how='inner', on='time')
         matched['recharge'] = (matched['prep'] - factor*matched['et'])
         
-        ref = 6.16635504e+10 # 1955 
+        ref_1955 = 6.16635504e+10 
+        ref_1989 = 6.27365088e+10
         month = 2.592e+06
-        pass  
+
+        # compute the timestamps 
+        matched['Time'] = pd.to_datetime(matched["Time"], format="%Y/%m")
+        matched['Timestamp'] = ( (matched['Time'].dt.year - 1955)*12 + matched['Time'].dt.month )*month + ref_1955 
+        
+        r_right, r_left, r_seepage = '', '', ''
+        for idx, row in matched.iterrows():
+            r_right += f'<seepage_face function="constant" start="{row["Timestamp"]}" inward_mass_flux="{row["recharge"]}"\n' 
+            r_left += f'<inward_mass_flux function="constant" start="{row["Timestamp]}" value="{row["recharge"]}"\n'
+            if row["Timestamp"] >= ref_1989: 
+                r_seepage += f'<inward_mass_flux function="constant" start="{row["Timestamp]}" value="{row["recharge"]/1000}"\n'
+        
+        tpl_str = tpl_str.replace("@r_right@", r_right)
+        tpl_str = tpl_str.replace("@r_left@", r_left)
+        tpl_str = tpl_str.replace("@r_seepage@", r_seepage)
 
     # write to a xml file 
     fname = dout.joinpath(f"sim{idx}.xml")
