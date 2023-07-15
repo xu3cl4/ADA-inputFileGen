@@ -57,12 +57,12 @@ def create_xml(template_xml, param_map, idx, dout):
     # replace recharge value 
     factor = param_map['@ET_factor@'] 
     if factor is not None:
-        # time, prep
+        # Date, prep
         df_prep = pd.read_csv(FPATH_prep)
-        # time, et
+        # Date, et
         df_et = pd.read_csv(FPATH_ET) 
         
-        matched = df_prep.merge(df_et, how='inner', on='time')
+        matched = df_prep.merge(df_et, how='inner', on='Date')
         matched['recharge'] = (matched['prep'] - factor*matched['et'])
         
         ref_1955 = 6.16635504e+10 
@@ -70,7 +70,7 @@ def create_xml(template_xml, param_map, idx, dout):
         month = 2.592e+06
 
         # compute the timestamps 
-        matched['Time'] = pd.to_datetime(matched["Time"], format="%Y/%m/%d")
+        matched['Date'] = pd.to_datetime(matched["Date"], format="%Y/%m/%d")
         matched['Timestamp'] = ( (matched['Time'].dt.year - 1955)*12 + matched['Time'].dt.month )*month + ref_1955 
         
         r_right, r_left, r_seepage = '', '', ''
