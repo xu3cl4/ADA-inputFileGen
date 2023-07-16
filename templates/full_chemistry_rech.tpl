@@ -208,35 +208,35 @@
   <mesh framework="mstk">
     <dimension>2</dimension>
     <read>
-      <file>refine_l2_nogordon.exo</file>
+      <file>../shared_files/refine_l2_nogordon.exo</file>
       <format>exodus ii</format>
     </read>
   </mesh>
 
   <regions>
     <region name="Lower aquifer">
-      <region_file name="refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="cell" label="30000"/>
+      <region_file name="../shared_files/refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="cell" label="30000"/>
     </region>
     <region name="Natural recharge (left)">
-      <region_file name="refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="face" label="1"/>
+      <region_file name="../shared_files/refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="face" label="1"/>
     </region>
     <region name="Natural recharge (right)">
-      <region_file name="refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="face" label="3"/>
+      <region_file name="../shared_files/refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="face" label="3"/>
     </region>
     <region name="Seepage basin">
-      <region_file name="refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="face" label="2"/>
+      <region_file name="../shared_files/refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="face" label="2"/>
     </region>
     <region name="Seepage face">
-      <region_file name="refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="face" label="4"/>
+      <region_file name="../shared_files/refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="face" label="4"/>
     </region>
     <region name="Tan_clay">
-      <region_file name="refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="cell" label="40000"/>
+      <region_file name="../shared_files/refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="cell" label="40000"/>
     </region>
     <region name="Upper_aquifer">
-      <region_file name="refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="cell" label="50000"/>
+      <region_file name="../shared_files/refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="cell" label="50000"/>
     </region>
   <region name="UTRA upstream">
-      <region_file name="refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="face" label="8"/>
+      <region_file name="../shared_files/refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="face" label="8"/>
     </region>
     <point name="Well1"    coordinate =  "1866, 45" />
     <point name="Well2"    coordinate =  "1866, 46" />
