@@ -440,7 +440,7 @@
       <assigned_regions>Seepage face,Natural recharge (right)</assigned_regions>
       <liquid_phase name="water">
         <liquid_component name="water">
-          <seepage_face function="constant" start="0.0" inward_mass_flux="@r_hist@@"/>
+          <seepage_face function="constant" start="0.0" inward_mass_flux="@r_hist@"/>
             
 @r_right@
 
