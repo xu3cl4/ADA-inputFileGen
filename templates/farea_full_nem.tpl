@@ -291,7 +291,7 @@ CONSTRAINT seepage
     SO4--    4.80e-5    T   
     Tritium  @tri_conc_seepage@   T   
     NO3-     1.00e-2    T   
-    UO2++    @uran_conc_seepage@    T   
+    UO2++    @uran_conc_seepage@   T   
     Tracer   2.17e-9    T
   /
 !  MINERALS : volume_fraction   SSA [m^2 mineral/m^3 bulk]

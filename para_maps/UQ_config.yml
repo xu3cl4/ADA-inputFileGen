@@ -35,7 +35,7 @@ pflo:
   "@tri_conc_seepage@":
     low: 1.0e-9
     up: 1.0e-8
-  "@al_conc_seepage": 
+  "@al_conc_seepage@": 
     low: 5.0e-9
     up: 1.5e-8
   "@uran_conc_seepage@":

@@ -6,7 +6,7 @@ import pandas as pd
 
 FPATH = Path(__file__)
 PATH_recharge = FPATH.parent.parent.joinpath('recharge_data')
-PATH_prep = PATH_recharge.joinpath('prep.csv')
+PATH_prcp = PATH_recharge.joinpath('prcp.csv')
 PATH_ET = PATH_recharge.joinpath('ET.csv')
 
 def create_pflo(template_pflo, param_map, idx, dout):
@@ -21,11 +21,11 @@ def create_pflo(template_pflo, param_map, idx, dout):
     tpl_str = tpl.read()
     tpl.close()
 
-    tpl_str = tpl_str.replace(f"@{idx}@", idx)
+    tpl_str = tpl_str.replace(f"@{idx}@", str(idx))
 
     # replace the parameters (except recharge), using the param_map
     for key in param_map:
-        tpl_str = tpl_str.replace(key, param_map[key])
+        tpl_str = tpl_str.replace(key, str(param_map[key]))
 
     # write to a xml file 
     fname = dout.joinpath(f"farea-full_nem{idx}.in")
@@ -41,44 +41,43 @@ def create_xml(template_xml, param_map, idx, dout):
         - if evapotranspiration factor is set, replace the recharge parameter 
         - write the modifed string to a xml file in dout 
     '''
-
     # read the template_xml file 
     tpl = open(template_xml, 'rt') 
     tpl_str = tpl.read()
     tpl.close()
 
-    tpl_str = tpl_str.replace("@idx@", idx)
+    tpl_str = tpl_str.replace("@idx@", str(idx))
 
     # replace the parameters (except recharge), using the param_map
     for key in param_map:
         if key == '@ET_factor@': continue 
-        tpl_str = tpl_str.replace(key, param_map[key])
+        tpl_str = tpl_str.replace(key, str(param_map[key]))
 
     # replace recharge value 
     factor = param_map['@ET_factor@'] 
     if factor is not None:
-        # Date, prep
-        df_prep = pd.read_csv(FPATH_prep)
+        # Date, prcp
+        df_prcp = pd.read_csv(PATH_prcp)
         # Date, et
-        df_et = pd.read_csv(FPATH_ET) 
+        df_et = pd.read_csv(PATH_ET) 
         
-        matched = df_prep.merge(df_et, how='inner', on='Date')
-        matched['recharge'] = (matched['prep'] - factor*matched['et'])
+        matched = df_prcp.merge(df_et, how='inner', on='Date')
+        matched['recharge'] = (matched['prcp'] - factor*matched['et'])
         
         ref_1955 = 6.16635504e+10 
         ref_1989 = 6.27365088e+10
         month = 2.592e+06
 
         # compute the timestamps 
-        matched['Date'] = pd.to_datetime(matched["Date"], format="%Y/%m/%d")
-        matched['Timestamp'] = ( (matched['Time'].dt.year - 1955)*12 + matched['Time'].dt.month )*month + ref_1955 
+        matched['Date'] = pd.to_datetime(matched["Date"], format="%Y-%m-%d")
+        matched['Timestamp'] = ( (matched['Date'].dt.year - 1955)*12 + matched['Date'].dt.month )*month + ref_1955 
         
         r_right, r_left, r_seepage = '', '', ''
-        for idx, row in matched.iterrows():
-            r_right += f'<seepage_face function="constant" start="{row["Timestamp"]}" inward_mass_flux="{row["recharge"]}/>"\n' 
-            r_left += f'<inward_mass_flux function="constant" start="{row["Timestamp"]}" value="{row["recharge"]}"/>\n'
+        for ind, row in matched.iterrows():
+            r_right += f'\t\t<seepage_face function="constant" start="{row["Timestamp"]}" inward_mass_flux="{row["recharge"]}"/>\n' 
+            r_left += f'\t\t<inward_mass_flux function="constant" start="{row["Timestamp"]}" value="{row["recharge"]}"/>\n'
             if row["Timestamp"] >= ref_1989: 
-                r_seepage += f'<inward_mass_flux function="constant" start="{row["Timestamp"]}" value="{row["recharge"]/1000}"/>\n'
+                r_seepage += f'\t\t<inward_mass_flux function="constant" start="{row["Timestamp"]}" value="{row["recharge"]/1000}"/>\n'
         
         tpl_str = tpl_str.replace("@r_right@", r_right)
         tpl_str = tpl_str.replace("@r_left@", r_left)

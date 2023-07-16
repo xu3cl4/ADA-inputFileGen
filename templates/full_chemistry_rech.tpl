@@ -37,7 +37,7 @@
   <process_kernels>
     <flow model="richards" state="on" />
     <transport state="on" />
-    <chemistry database="../shared_files/farea-full-new-nem.dat" engine="pflotran" state="on" input_filename="farea-full_nemd@idx@.in"/>
+    <chemistry database="../shared_files/farea-full-new-nem.dat" engine="pflotran" state="on" input_filename="farea-full_nem@idx@.in"/>
   </process_kernels>
 
   <phases>
@@ -442,7 +442,7 @@
         <liquid_component name="water">
           <seepage_face function="constant" start="0.0" inward_mass_flux="@r_hist@@"/>
             
-          @r_right@
+@r_right@
 
       </liquid_component>
 
@@ -459,7 +459,7 @@
         <liquid_component name="water">
           <inward_mass_flux value="@r_hist@" function="constant" start="0.0" />
             
-          @r_left@
+@r_left@
 
         </liquid_component>
         <geochemistry_component>
@@ -475,7 +475,7 @@
           <inward_mass_flux value="@r_hist@" function="constant" start="0.0" />
           <inward_mass_flux value="@r_mid@" function="constant" start="6.16635504e+10" />
 
-          @r_seepage@
+@r_seepage@
 
         </liquid_component>
         <geochemistry_component>

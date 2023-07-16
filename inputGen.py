@@ -11,7 +11,7 @@ from utils.files  import create_files
 FPATH = Path(__file__)
 DIR = FPATH.parent
 
-def getArguemnts():
+def getArguments():
     ''' parse the command-line interface
         the command line takes three required arguments  
 
@@ -51,3 +51,6 @@ def main():
                 )
             for i in range(n)
         )
+
+if __name__ == "__main__":
+    main()
