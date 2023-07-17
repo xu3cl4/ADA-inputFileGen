@@ -1,5 +1,6 @@
 # import from built-in modules 
 from argparse import ArgumentParser, RawTextHelpFormatter as RT
+from os       import cpu_count as ncpu
 from pathlib  import Path
 from joblib   import Parallel, delayed
 
@@ -45,7 +46,8 @@ def main():
     params = getParams(n, ipt, args.s)
 
     # use parallelism to write xml files 
-    Parallel(n_jobs=-1, verbose=1)\
+    nc = min(n*2, ncpu())
+    Parallel(n_jobs=nc, verbose=1)\
             (delayed(create_files)(
                     template_xml=tpl_xml, template_pflo=tpl_pflo, param_map=params[i], idx=i, dout=opt
                 )
