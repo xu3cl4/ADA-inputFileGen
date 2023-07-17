@@ -47,7 +47,7 @@ def main():
 
     # use parallelism to write xml files 
     nc = min(n, ncpu())
-    Parallel(n_jobs=nc, verbose=1)\
+    Parallel(n_jobs=nc, verbose=1, backend="multiprocessing")\
             (delayed(create_files)(
                     template_xml=tpl_xml, template_pflo=tpl_pflo, param_map=params[i], idx=i+1, dout=opt
                 )
