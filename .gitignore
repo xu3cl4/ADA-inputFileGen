@@ -12,3 +12,4 @@ thumbs.db
 token.txt
 
 *.json
+xmls/*
