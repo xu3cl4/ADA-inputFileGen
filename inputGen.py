@@ -46,7 +46,7 @@ def main():
     params = getParams(n, ipt, args.s)
 
     # use parallelism to write xml files 
-    nc = min(n*2, ncpu())
+    nc = min(n, ncpu())
     Parallel(n_jobs=nc, verbose=1)\
             (delayed(create_files)(
                     template_xml=tpl_xml, template_pflo=tpl_pflo, param_map=params[i], idx=i, dout=opt

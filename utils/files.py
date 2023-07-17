@@ -7,7 +7,7 @@ import pandas as pd
 FPATH = Path(__file__)
 PATH_recharge = FPATH.parent.parent.joinpath('recharge_data')
 PATH_prcp = PATH_recharge.joinpath('prcp.csv')
-PATH_ET = PATH_recharge.joinpath('ET.csv')
+PATH_ET = PATH_recharge.joinpath('et.csv')
 
 def create_pflo(template_pflo, param_map, idx, dout):
     ''' the workflow of the helper function:
