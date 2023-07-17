@@ -51,7 +51,7 @@ def main():
             (delayed(create_files)(
                     template_xml=tpl_xml, template_pflo=tpl_pflo, param_map=params[i], idx=i, dout=opt
                 )
-            for i in range(n)
+            for i in range(1, n+1)
         )
 
 if __name__ == "__main__":
