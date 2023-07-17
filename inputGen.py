@@ -49,9 +49,9 @@ def main():
     nc = min(n, ncpu())
     Parallel(n_jobs=nc, verbose=1)\
             (delayed(create_files)(
-                    template_xml=tpl_xml, template_pflo=tpl_pflo, param_map=params[i], idx=i, dout=opt
+                    template_xml=tpl_xml, template_pflo=tpl_pflo, param_map=params[i], idx=i+1, dout=opt
                 )
-            for i in range(1, n+1)
+            for i in range(n)
         )
 
 if __name__ == "__main__":
