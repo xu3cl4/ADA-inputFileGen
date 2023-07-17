@@ -1,0 +1,14 @@
+.DS_Store
+thumbs.db 
+
+.Rhistory 
+*.Rproj 
+*.R~
+
+*_pycache_*
+*.pyc
+.pytest_cache_
+
+token.txt
+
+*.json
