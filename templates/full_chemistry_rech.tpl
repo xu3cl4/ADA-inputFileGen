@@ -37,7 +37,7 @@
   <process_kernels>
     <flow model="richards" state="on" />
     <transport state="on" />
-    <chemistry database="shared_files/farea-full-new-nem.dat" engine="pflotran" state="on" input_filename="farea-full_nem@idx@.in"/>
+    <chemistry database="shared_files/farea-full-new-nem.dat" engine="pflotran" state="on" input_filename="xmls/farea-full_nem@idx@.in"/>
   </process_kernels>
 
   <phases>
@@ -491,7 +491,7 @@
   <output>
  
      <observations>
-         <filename>../output/observation_sim@idx@.out</filename>
+         <filename>output/observation_sim@idx@.out</filename>
        
        <liquid_phase name="water">
 
@@ -2186,13 +2186,13 @@
       </observations>
 
     <vis>
-        <base_filename>../vis/plot_sim@idx@</base_filename>
+        <base_filename>vis/plot_sim@idx@</base_filename>
       <num_digits>5</num_digits>
       <time_macros>Phase1</time_macros>
       <blacklist>alquimia_aux.*,free_ion.*,primary.*,secondary.*,ion_exchange_ref.*,mineral_reaction.*,mineral_specific.*,mineral_rate_constant.*,mineral_saturation_index.*,mineral_specific_surface_area.*,mineral_volumn_fractions.*</blacklist>
     </vis>
     <checkpoint>
-        <base_filename>../checkpoint/chk_sim@idx@</base_filename>
+        <base_filename>checkpoint/chk_sim@idx@</base_filename>
       <num_digits>5</num_digits>
       <time_macros>Every year</time_macros>
     </checkpoint>
