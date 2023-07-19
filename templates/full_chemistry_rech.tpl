@@ -444,15 +444,8 @@
             
 @r_right@
 
-      </liquid_component>
-
-<!--
-        <geochemistry_component>
-          <constraint function="constant" name="recharge" start="0.0 y"/>
-        </geochemistry_component>
--->
-    
-    </liquid_phase>
+        </liquid_component>
+      </liquid_phase>
     </boundary_condition>
 
     <boundary_condition name="BC 2: Mass Flux">
