@@ -14,12 +14,12 @@ DIR = FPATH.parent
 
 def getArguments():
     ''' parse the command-line interface
-        the command line takes three required arguments  
+        the command line takes four required arguments  
 
-        -n : number of xml files
-        -ipt: the file path to the parameter map
-        -tpl: the xml template 
-        -opt: the directory to output the xml files 
+        n : number of xml files
+        ipt: the file path to the parameter map
+        tpl_xml: the xml template 
+        opt: the directory to output the xml files 
     '''  
     parser = ArgumentParser(formatter_class=RT)
     parser.add_argument('n',         type = int, help="the number of parameter samples, each of which leads to a xml file")
@@ -49,7 +49,7 @@ def main():
     nc = min(n, ncpu())
     Parallel(n_jobs=nc, verbose=1, backend="multiprocessing")\
             (delayed(create_files)(
-                    template_xml=tpl_xml, template_pflo=tpl_pflo, param_map=params[i], idx=i+1, dout=opt
+                    template_xml=tpl_xml, template_pflo=tpl_pflo, param_map=params[i], idx=i, dout=opt
                 )
             for i in range(n)
         )
