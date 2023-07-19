@@ -2191,7 +2191,7 @@
       <blacklist>alquimia_aux.*,free_ion.*,primary.*,secondary.*,ion_exchange_ref.*,mineral_reaction.*,mineral_specific.*,mineral_rate_constant.*,mineral_saturation_index.*,mineral_specific_surface_area.*,mineral_volumn_fractions.*</blacklist>
     </vis>
     <checkpoint>
-      <base_filename>checkpointis/chk_sim@idx@_</base_filename>
+      <base_filename>checkpoints/chk_sim@idx@_</base_filename>
       <num_digits>5</num_digits>
       <time_macros>Every year</time_macros>
     </checkpoint>
