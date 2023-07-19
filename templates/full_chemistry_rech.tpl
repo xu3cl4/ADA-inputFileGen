@@ -21,7 +21,7 @@
       </time_macro>
 
        <time_macro name="every month">
-        <start>6.16635504e+10</start>
+        <start>1956.0 y</start>
         <timestep_interval>2.592e+06</timestep_interval>
         <stop>2023.0 y</stop>
       </time_macro>
@@ -37,7 +37,7 @@
   <process_kernels>
     <flow model="richards" state="on" />
     <transport state="on" />
-    <chemistry database="shared_files/farea-full-new-nem.dat" engine="pflotran" state="on" input_filename="xmls/farea-full_nem@idx@.in"/>
+    <chemistry database="xmls/farea-full-new-nem.dat" engine="pflotran" state="on" input_filename="xmls/farea-full_nem@idx@.in"/>
   </process_kernels>
 
   <phases>
@@ -235,7 +235,7 @@
     <region name="Upper_aquifer">
       <region_file name="shared_files/refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="cell" label="50000"/>
     </region>
-  <region name="UTRA upstream">
+    <region name="UTRA upstream">
       <region_file name="shared_files/refine_l2_nogordon.exo" type="labeled set" format="exodus ii" entity="face" label="8"/>
     </region>
     <point name="Well1"    coordinate =  "1866, 45" />
@@ -446,9 +446,11 @@
 
       </liquid_component>
 
+<!--
         <geochemistry_component>
           <constraint function="constant" name="recharge" start="0.0 y"/>
         </geochemistry_component>
+-->
     
     </liquid_phase>
     </boundary_condition>
@@ -821,1382 +823,1380 @@
             <functional>point</functional>
             <time_macros>every month</time_macros>
           </aqueous_conc>
-           <aqueous_conc solute="Tritium">
+          <aqueous_conc solute="Tritium">
             <assigned_regions>Well19</assigned_regions>
             <functional>point</functional>
             <time_macros>every month</time_macros>
-	           </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well20</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well21</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well22</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well23</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well24</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well25</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well26</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well27</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well28</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well29</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well30</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well31</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well32</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well33</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well34</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well35</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well36</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well37</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well38</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well39</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well40</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well41</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well42</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well43</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well44</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well45</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well46</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-		   <aqueous_conc solute="Tritium">
-		     <assigned_regions>Well47</assigned_regions>
-		     <functional>point</functional>
-		     <time_macros>every month</time_macros>
-		   </aqueous_conc>
-
-          <sorbed_conc solute="UO2++">
-            <assigned_regions>Well1</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-           <sorbed_conc solute="UO2++">
-            <assigned_regions>Well2</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-           <sorbed_conc solute="UO2++">
-            <assigned_regions>Well3</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-           <sorbed_conc solute="UO2++">
-            <assigned_regions>Well4</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-           <sorbed_conc solute="UO2++">
-            <assigned_regions>Well5</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-           <sorbed_conc solute="UO2++">
-            <assigned_regions>Well6</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-            <sorbed_conc solute="UO2++">
-            <assigned_regions>Well7</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-           <sorbed_conc solute="UO2++">
-            <assigned_regions>Well8</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-           <sorbed_conc solute="UO2++">
-            <assigned_regions>Well9</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-           <sorbed_conc solute="UO2++">
-            <assigned_regions>Well10</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-          <sorbed_conc solute="UO2++">
-            <assigned_regions>Well11</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-           <sorbed_conc solute="UO2++">
-            <assigned_regions>Well12</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-           <sorbed_conc solute="UO2++">
-            <assigned_regions>Well13</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-          <sorbed_conc solute="UO2++">
-           <assigned_regions>Well14</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-           <sorbed_conc solute="UO2++">
-            <assigned_regions>Well15</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-           <sorbed_conc solute="UO2++">
-            <assigned_regions>Well16</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-           <sorbed_conc solute="UO2++">
-            <assigned_regions>Well17</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-          <sorbed_conc solute="UO2++">
-            <assigned_regions>Well18</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </sorbed_conc>
-           <sorbed_conc solute="UO2++">
-            <assigned_regions>Well19</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-           </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well20</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well21</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well22</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well23</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well24</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well25</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well26</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well27</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well28</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well29</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well30</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well31</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well32</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well33</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well34</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well35</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well36</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well37</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well38</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well39</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-      <sorbed_conc solute="UO2++">
-         <assigned_regions>Well40</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well41</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well42</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well43</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well44</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well45</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well46</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-       <sorbed_conc solute="UO2++">
-         <assigned_regions>Well47</assigned_regions>
-         <functional>point</functional>
-         <time_macros>every month</time_macros>
-       </sorbed_conc>
-
-
-          <aqueous_conc solute="UO2++">
-            <assigned_regions>Well1</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="UO2++">
-            <assigned_regions>Well2</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="UO2++">
-            <assigned_regions>Well3</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="UO2++">
-            <assigned_regions>Well4</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="UO2++">
-            <assigned_regions>Well5</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="UO2++">
-            <assigned_regions>Well6</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-            <aqueous_conc solute="UO2++">
-            <assigned_regions>Well7</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="UO2++">
-            <assigned_regions>Well8</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="UO2++">
-            <assigned_regions>Well9</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="UO2++">
-            <assigned_regions>Well10</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-          <aqueous_conc solute="UO2++">
-            <assigned_regions>Well11</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="UO2++">
-            <assigned_regions>Well12</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="UO2++">
-            <assigned_regions>Well13</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-          <aqueous_conc solute="UO2++">
-           <assigned_regions>Well14</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="UO2++">
-            <assigned_regions>Well15</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="UO2++">
-            <assigned_regions>Well16</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="UO2++">
-            <assigned_regions>Well17</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-          <aqueous_conc solute="UO2++">
-            <assigned_regions>Well18</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="UO2++">
-            <assigned_regions>Well19</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-           </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
+	  </aqueous_conc>
+	  <aqueous_conc solute="Tritium">
 	     <assigned_regions>Well20</assigned_regions>
 	     <functional>point</functional>
 	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
+	  </aqueous_conc>
+	  <aqueous_conc solute="Tritium">
 	     <assigned_regions>Well21</assigned_regions>
 	     <functional>point</functional>
 	     <time_macros>every month</time_macros>
 	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
+	   <aqueous_conc solute="Tritium">
 	     <assigned_regions>Well22</assigned_regions>
 	     <functional>point</functional>
 	     <time_macros>every month</time_macros>
 	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
+	   <aqueous_conc solute="Tritium">
 	     <assigned_regions>Well23</assigned_regions>
 	     <functional>point</functional>
 	     <time_macros>every month</time_macros>
 	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well24</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
+	   <aqueous_conc solute="Tritium">
+	      <assigned_regions>Well24</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
 	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well25</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
+	   <aqueous_conc solute="Tritium">
+	      <assigned_regions>Well25</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
 	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well26</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
+	   <aqueous_conc solute="Tritium">
+	      <assigned_regions>Well26</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
 	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well27</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
+	   <aqueous_conc solute="Tritium">
+	      <assigned_regions>Well27</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
 	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well28</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
+	   <aqueous_conc solute="Tritium">
+	      <assigned_regions>Well28</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
 	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well29</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
+	   <aqueous_conc solute="Tritium">
+	      <assigned_regions>Well29</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
 	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well30</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
+	   <aqueous_conc solute="Tritium">
+	      <assigned_regions>Well30</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
 	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well31</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
+	   <aqueous_conc solute="Tritium">
+	      <assigned_regions>Well31</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
 	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well32</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
+	   <aqueous_conc solute="Tritium">
+	      <assigned_regions>Well32</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
 	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well33</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well34</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well35</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well36</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well37</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well38</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well39</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well40</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well41</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well42</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well43</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well44</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well45</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well46</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="UO2++">
-	     <assigned_regions>Well47</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-     </aqueous_conc>
+ 	   <aqueous_conc solute="Tritium">
+	      <assigned_regions>Well33</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Tritium">
+	      <assigned_regions>Well34</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Tritium">
+	       <assigned_regions>Well35</assigned_regions>
+	       <functional>point</functional>
+	       <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Tritium">
+	       <assigned_regions>Well36</assigned_regions>
+	       <functional>point</functional>
+	       <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Tritium">
+	       <assigned_regions>Well37</assigned_regions>
+	       <functional>point</functional>
+	       <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Tritium">
+	       <assigned_regions>Well38</assigned_regions>
+	       <functional>point</functional>
+	       <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Tritium">
+	       <assigned_regions>Well39</assigned_regions>
+	       <functional>point</functional>
+	       <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Tritium">
+	       <assigned_regions>Well40</assigned_regions>
+	       <functional>point</functional>
+	       <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Tritium">
+	       <assigned_regions>Well41</assigned_regions>
+	       <functional>point</functional>
+	       <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Tritium">
+	       <assigned_regions>Well42</assigned_regions>
+	       <functional>point</functional>
+	       <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Tritium">
+	       <assigned_regions>Well43</assigned_regions>
+	       <functional>point</functional>
+	       <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Tritium">
+	       <assigned_regions>Well44</assigned_regions>
+	       <functional>point</functional>
+	       <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Tritium">
+	       <assigned_regions>Well45</assigned_regions>
+	       <functional>point</functional>
+	       <time_macros>every month</time_macros>	
+	    </aqueous_conc>
+	    <aqueous_conc solute="Tritium">
+	       <assigned_regions>Well46</assigned_regions>
+	       <functional>point</functional>
+	       <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Tritium">
+	       <assigned_regions>Well47</assigned_regions>
+	       <functional>point</functional>
+	       <time_macros>every month</time_macros>
+	    </aqueous_conc>
 
-          <ph>
-            <assigned_regions>Well1</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-           <ph>
-            <assigned_regions>Well2</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-           <ph>
-            <assigned_regions>Well3</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-           <ph>
-            <assigned_regions>Well4</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-           <ph>
-            <assigned_regions>Well5</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-           <ph>
-            <assigned_regions>Well6</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well1</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well2</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well3</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well4</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well5</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well6</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+              <sorbed_conc solute="UO2++">
+              <assigned_regions>Well7</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well8</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well9</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well10</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well11</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well12</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well13</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well14</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well15</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well16</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well17</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well18</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well19</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well20</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well21</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+	    <sorbed_conc solute="UO2++">
+	      <assigned_regions>Well22</assigned_regions>
+	      <functional>point</functional>
+              <time_macros>every month</time_macros>
+	    </sorbed_conc>
+	    <sorbed_conc solute="UO2++">
+	      <assigned_regions>Well23</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </sorbed_conc>
+	    <sorbed_conc solute="UO2++">
+	      <assigned_regions>Well24</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </sorbed_conc>
+	    <sorbed_conc solute="UO2++">
+	      <assigned_regions>Well25</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </sorbed_conc>
+	    <sorbed_conc solute="UO2++">
+	      <assigned_regions>Well26</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </sorbed_conc>
+	    <sorbed_conc solute="UO2++">
+	      <assigned_regions>Well27</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well28</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well29</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well30</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well31</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well32</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well33</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well34</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well35</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well36</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well37</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well38</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well39</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well40</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well41</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well42</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well43</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well44</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well45</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well46</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+            <sorbed_conc solute="UO2++">
+              <assigned_regions>Well47</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </sorbed_conc>
+
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well1</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well2</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well3</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well4</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+	    <aqueous_conc solute="UO2++">
+              <assigned_regions>Well5</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+	    <aqueous_conc solute="UO2++">
+              <assigned_regions>Well6</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well7</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well8</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well9</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well10</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well11</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well12</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well13</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well14</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well15</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well16</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well17</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well18</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="UO2++">
+              <assigned_regions>Well19</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well20</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well21</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well22</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well23</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well24</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well25</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well26</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well27</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well28</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well29</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well30</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well31</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well32</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well33</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well34</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well35</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well36</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well37</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well38</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well39</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well40</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well41</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well42</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well43</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well44</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well45</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well46</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+  	    </aqueous_conc>
+  	    <aqueous_conc solute="UO2++">
+  	      <assigned_regions>Well47</assigned_regions>
+  	      <functional>point</functional>
+  	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+
             <ph>
-            <assigned_regions>Well7</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-           <ph>
-            <assigned_regions>Well8</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-           <ph>
-            <assigned_regions>Well9</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-           <ph>
-            <assigned_regions>Well10</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-          <ph>
-            <assigned_regions>Well11</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-           <ph>
-            <assigned_regions>Well12</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-           <ph>
-            <assigned_regions>Well13</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-          <ph>
-           <assigned_regions>Well14</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-           <ph>
-            <assigned_regions>Well15</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-           <ph>
-            <assigned_regions>Well16</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-           <ph>
-            <assigned_regions>Well17</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-          <ph>
-            <assigned_regions>Well18</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-          <ph>
-            <assigned_regions>Well19</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </ph>
-           <ph>
-            <assigned_regions>Well20</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-           </ph>
+              <assigned_regions>Well1</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
             <ph>
-        <assigned_regions>Well21</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well22</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well23</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well24</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well25</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well26</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well27</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well28</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well29</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well30</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well31</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well32</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well33</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well34</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well35</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well36</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well37</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well38</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well39</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well40</assigned_regions>
-        <functional>point</functional>
-            <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well41</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well42</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well43</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well44</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well45</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well46</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
-      <ph>
-        <assigned_regions>Well47</assigned_regions>
-        <functional>point</functional>
-        <time_macros>every month</time_macros>
-      </ph>
+              <assigned_regions>Well2</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well3</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well4</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well5</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well6</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well7</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well8</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well9</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well10</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well11</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well12</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well13</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well14</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well15</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well16</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well17</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well18</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well19</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well20</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well21</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well22</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well23</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well24</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well25</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well26</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well27</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well28</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well29</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well30</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well31</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well32</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well33</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well34</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well35</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well36</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well37</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well38</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well39</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well40</assigned_regions>
+              <functional>point</functional>
+                  <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well41</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well42</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well43</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well44</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well45</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well46</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
+            <ph>
+              <assigned_regions>Well47</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </ph>
 
       
-          <aqueous_conc solute="Al+++">
-            <assigned_regions>Well1</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="Al+++">
-            <assigned_regions>Well2</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="Al+++">
-            <assigned_regions>Well3</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="Al+++">
-            <assigned_regions>Well4</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="Al+++">
-            <assigned_regions>Well5</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="Al+++">
-            <assigned_regions>Well6</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
             <aqueous_conc solute="Al+++">
-            <assigned_regions>Well7</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="Al+++">
-            <assigned_regions>Well8</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="Al+++">
-            <assigned_regions>Well9</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="Al+++">
-            <assigned_regions>Well10</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-          <aqueous_conc solute="Al+++">
-            <assigned_regions>Well11</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="Al+++">
-            <assigned_regions>Well12</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="Al+++">
-            <assigned_regions>Well13</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-          <aqueous_conc solute="Al+++">
-           <assigned_regions>Well14</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="Al+++">
-            <assigned_regions>Well15</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="Al+++">
-            <assigned_regions>Well16</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="Al+++">
-            <assigned_regions>Well17</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-          <aqueous_conc solute="Al+++">
-            <assigned_regions>Well18</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="Al+++">
-            <assigned_regions>Well19</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well20</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well21</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well22</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well23</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well24</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well25</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well26</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well27</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well28</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well29</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well30</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well31</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well32</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well33</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well34</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well35</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well36</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well37</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well38</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well39</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well40</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well41</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well42</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well43</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well44</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well45</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well46</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
-		<aqueous_conc solute="Al+++">
-		  <assigned_regions>Well47</assigned_regions>
-		  <functional>point</functional>
-		  <time_macros>every month</time_macros>
-		</aqueous_conc>
+              <assigned_regions>Well1</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="Al+++">
+              <assigned_regions>Well2</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="Al+++">
+              <assigned_regions>Well3</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="Al+++">
+              <assigned_regions>Well4</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="Al+++">
+              <assigned_regions>Well5</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="Al+++">
+              <assigned_regions>Well6</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+              <aqueous_conc solute="Al+++">
+              <assigned_regions>Well7</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="Al+++">
+              <assigned_regions>Well8</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="Al+++">
+              <assigned_regions>Well9</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="Al+++">
+              <assigned_regions>Well10</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="Al+++">
+              <assigned_regions>Well11</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="Al+++">
+              <assigned_regions>Well12</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="Al+++">
+              <assigned_regions>Well13</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="Al+++">
+             <assigned_regions>Well14</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="Al+++">
+              <assigned_regions>Well15</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="Al+++">
+              <assigned_regions>Well16</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="Al+++">
+              <assigned_regions>Well17</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="Al+++">
+              <assigned_regions>Well18</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="Al+++">
+              <assigned_regions>Well19</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well20</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+ 	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well21</assigned_regions>
+ 	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well22</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well23</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well24</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well25</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well26</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well27</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well28</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well29</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well30</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well31</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well32</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well33</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well34</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well35</assigned_regions>
+	      <functional>point</functional>
+              <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well36</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well37</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well38</assigned_regions>
+	      <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well39</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well40</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well41</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well42</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well43</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well44</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well45</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well46</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
+	    <aqueous_conc solute="Al+++">
+	      <assigned_regions>Well47</assigned_regions>
+	      <functional>point</functional>
+	      <time_macros>every month</time_macros>
+	    </aqueous_conc>
 
-          <aqueous_conc solute="NO3-">
-            <assigned_regions>Well1</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="NO3-">
-            <assigned_regions>Well2</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="NO3-">
-            <assigned_regions>Well3</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="NO3-">
-            <assigned_regions>Well4</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="NO3-">
-            <assigned_regions>Well5</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="NO3-">
-            <assigned_regions>Well6</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
             <aqueous_conc solute="NO3-">
-            <assigned_regions>Well7</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="NO3-">
-            <assigned_regions>Well8</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="NO3-">
-            <assigned_regions>Well9</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="NO3-">
-            <assigned_regions>Well10</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-          <aqueous_conc solute="NO3-">
-            <assigned_regions>Well11</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="NO3-">
-            <assigned_regions>Well12</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="NO3-">
-            <assigned_regions>Well13</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-          <aqueous_conc solute="NO3-">
-           <assigned_regions>Well14</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="NO3-">
-            <assigned_regions>Well15</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="NO3-">
-            <assigned_regions>Well16</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="NO3-">
-            <assigned_regions>Well17</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-          <aqueous_conc solute="NO3-">
-            <assigned_regions>Well18</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-          </aqueous_conc>
-           <aqueous_conc solute="NO3-">
-            <assigned_regions>Well19</assigned_regions>
-            <functional>point</functional>
-            <time_macros>every month</time_macros>
-           </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well20</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well21</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well22</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well23</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well24</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well25</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well26</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well27</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well28</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well29</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well30</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well31</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well32</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well33</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well34</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well35</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well36</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well37</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well38</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well39</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well40</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well41</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well42</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well43</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	     <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well44</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well45</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well46</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
-	   <aqueous_conc solute="NO3-">
-	     <assigned_regions>Well47</assigned_regions>
-	     <functional>point</functional>
-	     <time_macros>every month</time_macros>
-	   </aqueous_conc>
+              <assigned_regions>Well1</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="NO3-">
+              <assigned_regions>Well2</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="NO3-">
+              <assigned_regions>Well3</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="NO3-">
+              <assigned_regions>Well4</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="NO3-">
+              <assigned_regions>Well5</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="NO3-">
+              <assigned_regions>Well6</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+              <aqueous_conc solute="NO3-">
+              <assigned_regions>Well7</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="NO3-">
+              <assigned_regions>Well8</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="NO3-">
+              <assigned_regions>Well9</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="NO3-">
+              <assigned_regions>Well10</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="NO3-">
+              <assigned_regions>Well11</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="NO3-">
+              <assigned_regions>Well12</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="NO3-">
+              <assigned_regions>Well13</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="NO3-">
+             <assigned_regions>Well14</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="NO3-">
+              <assigned_regions>Well15</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="NO3-">
+              <assigned_regions>Well16</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="NO3-">
+              <assigned_regions>Well17</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+            <aqueous_conc solute="NO3-">
+              <assigned_regions>Well18</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+            </aqueous_conc>
+             <aqueous_conc solute="NO3-">
+              <assigned_regions>Well19</assigned_regions>
+              <functional>point</functional>
+              <time_macros>every month</time_macros>
+             </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well20</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well21</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well22</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well23</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well24</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well25</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well26</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well27</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well28</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well29</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well30</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well31</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well32</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well33</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well34</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well35</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well36</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well37</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well38</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well39</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well40</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well41</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well42</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well43</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	     <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well44</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well45</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well46</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
+  	   <aqueous_conc solute="NO3-">
+  	     <assigned_regions>Well47</assigned_regions>
+  	     <functional>point</functional>
+  	     <time_macros>every month</time_macros>
+  	   </aqueous_conc>
           
-          <aqueous_conc solute="Tracer">
-          <assigned_regions>Well10</assigned_regions>
-          <functional>point</functional>
-          <time_macros>every month</time_macros>
-        </aqueous_conc>
-        <aqueous_conc solute="Tracer">
-          <assigned_regions>Well12</assigned_regions>
-          <functional>point</functional>
-          <time_macros>every month</time_macros>
-        </aqueous_conc>
-        <aqueous_conc solute="Tracer">
-          <assigned_regions>Well14</assigned_regions>
-          <functional>point</functional>
-          <time_macros>every month</time_macros>
-        </aqueous_conc>
-        <aqueous_conc solute="Tracer">
-          <assigned_regions>Well16</assigned_regions>
-          <functional>point</functional>
-          <time_macros>every month</time_macros>
-        </aqueous_conc>
-        <aqueous_conc solute="Tracer">
-          <assigned_regions>Well18</assigned_regions>
-          <functional>point</functional>
-          <time_macros>every month</time_macros>
-        </aqueous_conc>
-
-        <aqueous_conc solute="Tracer">
-          <assigned_regions>Well38</assigned_regions>
-          <functional>point</functional>
-          <time_macros>every month</time_macros>
-        </aqueous_conc>
+           <aqueous_conc solute="Tracer">
+             <assigned_regions>Well10</assigned_regions>
+             <functional>point</functional>
+             <time_macros>every month</time_macros>
+           </aqueous_conc>
+           <aqueous_conc solute="Tracer">
+             <assigned_regions>Well12</assigned_regions>
+             <functional>point</functional>
+             <time_macros>every month</time_macros>
+           </aqueous_conc>
+           <aqueous_conc solute="Tracer">
+             <assigned_regions>Well14</assigned_regions>
+             <functional>point</functional>
+             <time_macros>every month</time_macros>
+           </aqueous_conc>
+           <aqueous_conc solute="Tracer">
+             <assigned_regions>Well16</assigned_regions>
+             <functional>point</functional>
+             <time_macros>every month</time_macros>
+           </aqueous_conc>
+           <aqueous_conc solute="Tracer">
+             <assigned_regions>Well18</assigned_regions>
+             <functional>point</functional>
+             <time_macros>every month</time_macros>
+           </aqueous_conc>
+           <aqueous_conc solute="Tracer">
+             <assigned_regions>Well38</assigned_regions>
+             <functional>point</functional>
+             <time_macros>every month</time_macros>
+           </aqueous_conc>
 
         </liquid_phase>
-
       </observations>
 
     <vis>
-        <base_filename>vis/plot_sim@idx@</base_filename>
+      <base_filename>vis/plot_sim@idx@</base_filename>
       <num_digits>5</num_digits>
       <time_macros>Phase1</time_macros>
       <blacklist>alquimia_aux.*,free_ion.*,primary.*,secondary.*,ion_exchange_ref.*,mineral_reaction.*,mineral_specific.*,mineral_rate_constant.*,mineral_saturation_index.*,mineral_specific_surface_area.*,mineral_volumn_fractions.*</blacklist>
     </vis>
     <checkpoint>
-        <base_filename>checkpoint/chk_sim@idx@</base_filename>
+      <base_filename>checkpointis/chk_sim@idx@_</base_filename>
       <num_digits>5</num_digits>
       <time_macros>Every year</time_macros>
     </checkpoint>
   </output>
+
 </amanzi_input>
   
 
