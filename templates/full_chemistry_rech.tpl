@@ -26,9 +26,9 @@
         <stop>2023.0 y</stop>
       </time_macro>
 
-      <time_macro name="Every year">
+      <time_macro name="Every five year">
 	<start>1956.0 y</start>
-	<timestep_interval>1.0 y</timestep_interval>
+	<timestep_interval>5.0 y</timestep_interval>
 	<stop>2023.0 y</stop>
       </time_macro>
     </macros>
@@ -2186,7 +2186,7 @@
     <checkpoint>
       <base_filename>checkpoints/chk_sim@idx@_</base_filename>
       <num_digits>5</num_digits>
-      <time_macros>Every year</time_macros>
+      <time_macros>Every five year</time_macros>
     </checkpoint>
   </output>
 
