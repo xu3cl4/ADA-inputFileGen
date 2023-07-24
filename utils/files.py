@@ -6,6 +6,7 @@ import pandas as pd
 
 FPATH = Path(__file__)
 PATH_recharge = FPATH.parent.parent.joinpath('recharge_data')
+
 PATH_prcp = PATH_recharge.joinpath('prcp.csv')
 PATH_ET = PATH_recharge.joinpath('et.csv')
 
@@ -15,7 +16,6 @@ def create_pflo(template_pflo, param_map, idx, dout):
         - replace the parameters in the string, using the parameter map 
         - write the modifed string to a .in file in dout 
     '''
-
     # read the template_pflo file 
     tpl = open(template_pflo, 'rt') 
     tpl_str = tpl.read()
@@ -90,7 +90,12 @@ def create_xml(template_xml, param_map, idx, dout):
 
     return 
 
-def create_files(template_xml, template_pflo, param_map, idx, dout):
+def create_files(template_xml, template_pflo, param_map, idx, douti, year=False):
+    # modify recharge data path if the user intends to use yearly data
+    if year: 
+        global PATH_prcp, PATH_ET
+        PATH_prcp = PATH_prcp.parent.joinpath('prcp_year.csv')
+        PATH_ET = PATH_ET.parent.joinpath('et_year.csv')
 
     # create xml
     create_xml(template_xml, param_map["amanzi"], idx, dout)
