@@ -90,7 +90,7 @@ def create_xml(template_xml, param_map, idx, dout):
 
     return 
 
-def create_files(template_xml, template_pflo, param_map, idx, douti, year=False):
+def create_files(template_xml, template_pflo, param_map, idx, dout, year=False):
     # modify recharge data path if the user intends to use yearly data
     if year: 
         global PATH_prcp, PATH_ET

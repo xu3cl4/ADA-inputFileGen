@@ -53,14 +53,14 @@ def main():
     nc = min(n, ncpu())
     Parallel(n_jobs=nc, verbose=1, backend="multiprocessing")\
             (delayed(create_files)(
-                    template_xml=tpl_xml, template_pflo=tpl_pflo, param_map=params[i], idx=i, dout=opt, year=args.y 
+                    template_xml=tpl_xml, template_pflo=tpl_pflo, param_map=params[i], idx=i+3, dout=opt, year=args.y 
                 )
             for i in range(n)
         )
 
     # add other required files to out directory 
-    if args.ox is not None:
-        files = Path(other).glob(*)
+    if other is not None:
+        files = Path(other).glob('*')
         for f in files:
             cp(f, opt)
 
