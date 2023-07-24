@@ -34,7 +34,7 @@ def create_pflo(template_pflo, param_map, idx, dout):
     
     return 
 
-def create_xml(template_xml, param_map, idx, dout):
+def create_xml(template_xml, param_map, idx, dout, year):
     ''' the workflow of the helper function:
         - read the template_xml as a long string 
         - replace the parameters in the string, using the parameter map 
@@ -69,8 +69,12 @@ def create_xml(template_xml, param_map, idx, dout):
         month = 2.592e+06
 
         # compute the timestamps 
-        matched['Date'] = pd.to_datetime(matched["Date"], format="%Y-%m-%d")
-        matched['Timestamp'] = ( (matched['Date'].dt.year - 1955)*12 + matched['Date'].dt.month )*month + ref_1955 
+        if year:
+            matched['Date'] = pd.to_datetime(matched["Date"], format="%Y")
+            matched['Timestamp'] = (matched['Date'].dt.year - 1955)*12*month + ref_1955 
+        else:
+            matched['Date'] = pd.to_datetime(matched["Date"], format="%Y-%m-%d")
+            matched['Timestamp'] = ( (matched['Date'].dt.year - 1955)*12 + matched['Date'].dt.month - 1)*month + ref_1955 
         
         r_right, r_left, r_seepage = '', '', ''
         for ind, row in matched.iterrows():
@@ -98,7 +102,7 @@ def create_files(template_xml, template_pflo, param_map, idx, dout, year=False):
         PATH_ET = PATH_ET.parent.joinpath('et_year.csv')
 
     # create xml
-    create_xml(template_xml, param_map["amanzi"], idx, dout)
+    create_xml(template_xml, param_map["amanzi"], idx, dout, year)
 
     # create dat file for pflotran 
     if template_pflo is not None:
