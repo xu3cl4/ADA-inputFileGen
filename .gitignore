@@ -13,3 +13,5 @@ token.txt
 
 *.json
 xmls/*
+
+*.swp

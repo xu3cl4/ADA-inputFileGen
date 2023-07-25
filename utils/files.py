@@ -51,7 +51,10 @@ def create_xml(template_xml, param_map, idx, dout, year):
     # replace the parameters (except recharge), using the param_map
     for key in param_map:
         if key == '@ET_factor@': continue 
+        
         tpl_str = tpl_str.replace(key, str(param_map[key]))
+        if key == '@r_hist@':
+            tpl_str = tpl_str.replace('@r_after@', str(param_map[key]/1000))
 
     # replace recharge value 
     factor = param_map['@ET_factor@'] 
