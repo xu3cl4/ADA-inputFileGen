@@ -65,7 +65,7 @@ def getParams(nsim, fin, seed):
         fname = PATH_par.joinpath(f'{fin.stem}_paras.json')
         with open(fname, 'a') as f:
             for i, m in enumerate(maps):
-                f.write(f'sample {i}\n')
+                f.write(f'sample {i+1}\n')
                 json.dump(m, f)
                 f.write('\n')
 
