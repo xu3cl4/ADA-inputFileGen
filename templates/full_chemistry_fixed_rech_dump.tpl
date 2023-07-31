@@ -462,7 +462,7 @@
       <liquid_phase name="water">
         <liquid_component name="water">
           <inward_mass_flux value="4.743e-6" function="constant" start="0.0" />
-          <inward_mass_flux value="@r_mid@" function="constant" start="6.16635504e+10" />
+          <inward_mass_flux value="0.0001113484" function="constant" start="6.16635504e+10" />
 	  <inward_mass_flux value="4.743e-9" function="constant" start="6.27365088e+10" />
         </liquid_component>
         <geochemistry_component>
