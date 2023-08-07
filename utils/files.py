@@ -81,8 +81,10 @@ def create_xml(template_xml, param_map, idx, dout, year):
         
         r_right, r_left, r_seepage = '', '', ''
         for ind, row in matched.iterrows():
-            r_right += f'\t\t<seepage_face function="constant" start="{row["Timestamp"]}" inward_mass_flux="{row["recharge"]}"/>\n' 
-            r_left += f'\t\t<inward_mass_flux function="constant" start="{row["Timestamp"]}" value="{row["recharge"]}"/>\n'
+            s = f'\t\t<inward_mass_flux function="constant" start="{row["Timestamp"]}" value="{row["recharge"]}"/>\n'
+            r_right += s
+            # r_right += f'\t\t<seepage_face function="constant" start="{row["Timestamp"]}" inward_mass_flux="{row["recharge"]}"/>\n' 
+            r_left += s
             if row["Timestamp"] >= ref_1989: 
                 r_seepage += f'\t\t<inward_mass_flux function="constant" start="{row["Timestamp"]}" value="{row["recharge"]/1000}"/>\n'
         

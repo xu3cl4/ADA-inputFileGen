@@ -68,6 +68,18 @@ def getParams(nsim, fin, seed):
                 f.write(f'sample {i+1}\n')
                 json.dump(m, f)
                 f.write('\n')
+        ''' 
+        maps_amanzi = map(lambda x: x['amanzi'], maps)
+        maps_pflo   = map(lambda x: x['pflo'],   maps)
+
+        para_amanzi = pd.DataFrame(maps_amanzi)
+        para_amanzi.columns = list(amanzi.keys()) 
+        para_pflo   = pd.DataFrame(maps_pflo)
+        para_pflo.columns   = list(pflo.keys())
+        para        = pd.concat([para_amanzi, para_pflo], axis=1, join='inner')
+        fname_csv   = fname.with_suffix('.csv')
+        para.to_csv(fname_csv, index=False)
+        '''
 
         return maps
 
