@@ -10,7 +10,7 @@ import yaml
 FPATH = Path(__file__)
 PATH_par = FPATH.parent.parent.joinpath('para_maps')
 
-def getParams(nsim, fin, seed, path_to_csv):
+def getParams_yml(nsim, fin, seed, path_to_csv):
     ''' read from a .yaml/.yml file for the range of each parameter 
         the format of .yaml file is 
             amanzi: 
@@ -83,6 +83,31 @@ def getParams(nsim, fin, seed, path_to_csv):
         para        = pd.concat([para_amanzi, para_pflo], axis=1, join='inner')
         fname_csv   = fname.with_suffix('.csv')
         para.to_csv(fname_csv, index=False)
+        
+        return maps 
 
-        return maps
+def getParams_csv(fin):
+    
+    params = pd.read_csv(fin)
+    params_amanzi = df.columns[~params.columns.str.contains("seepage")]
+    params_pflo   = df.columns[params.columns.str.contains("seepage")] 
+
+    def make_map(row):
+        mapping = {}
+        mapping['amanzi'] = dict(zip(params_amanzi, row[params_amanzi]))
+        mapping['amanzi'] = dict(zip(params_pflo, row[params_pflo]))
+        return mapping 
+
+    maps = (params.apply(make_map, axis=1)).tolist()
+    return maps
+
+def getParams(nsim, fin, seed, path_to_csv):
+
+    dispatch = {
+            '.yml':  lambda n, f, s, p: getParams_yml(n, f, s, p), 
+            '.yaml': lambda n, f, s, p: getParams_yml(n, f, s, p), 
+            '.csv':  lambda n, f, s, p: getParams_csv(f)
+            }
+    
+    return dispatch[fin.suffix](nsim, fin, seed, path_to_csv)
 

@@ -20,11 +20,11 @@ def getArguments():
         n : number of xml files
         ipt: the file path to the parameter map
         tpl_xml: the xml template 
-        opt: the directory to output the xml files 
+        opt: the directory to output the xml files
     '''  
     parser = ArgumentParser(formatter_class=RT)
     parser.add_argument('n',         type = int, help="the number of parameter samples, each of which leads to a xml file")
-    parser.add_argument('ipt',       type = str, help="the file path to a .yaml/yml parameter map in the parameters folder")
+    parser.add_argument('ipt',       type = str, help="the file path to a .yaml/yml or .csv parameter map in the parameters folder")
     parser.add_argument('tpl_xml',   type = str, help="the file path to a xml template in the template folder")
     parser.add_argument('-tpl_pflo', type = str, help="the file path to a xml template in the template folder",                         default ="")
     parser.add_argument('opt',       type = str, help="the directory to store xml files")
@@ -45,7 +45,7 @@ def main():
     opt      = DIR.joinpath(args.opt)
     other    = DIR.joinpath(args.ox)       if len(args.ox) != 0       else None
 
-    # sample from the parameter space 
+    # sample from the parameter space, or use the given list of parameters 
     # params is a list of parameter maps
     params = getParams(n, ipt, args.s, tpl_xml)
 
