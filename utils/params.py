@@ -3,13 +3,14 @@ from pathlib         import Path
 from scipy.stats.qmc import LatinHypercube as LHS, scale
 
 import json
-import numpy as np
+import numpy  as np
+import pandas as pd
 import yaml
 
 FPATH = Path(__file__)
 PATH_par = FPATH.parent.parent.joinpath('para_maps')
 
-def getParams(nsim, fin, seed):
+def getParams(nsim, fin, seed, path_to_csv):
     ''' read from a .yaml/.yml file for the range of each parameter 
         the format of .yaml file is 
             amanzi: 
@@ -62,13 +63,16 @@ def getParams(nsim, fin, seed):
         maps = np.apply_along_axis(make_map, 1, sample_scaled).tolist()
         
         # save the parameters 
-        fname = PATH_par.joinpath(f'{fin.stem}_paras.json')
+        
+        fname = PATH_par.joinpath(f'{path_to_csv.stem}_paras.json')
+        '''
         with open(fname, 'a') as f:
             for i, m in enumerate(maps):
                 f.write(f'sample {i+1}\n')
                 json.dump(m, f)
                 f.write('\n')
         ''' 
+
         maps_amanzi = map(lambda x: x['amanzi'], maps)
         maps_pflo   = map(lambda x: x['pflo'],   maps)
 
@@ -79,7 +83,6 @@ def getParams(nsim, fin, seed):
         para        = pd.concat([para_amanzi, para_pflo], axis=1, join='inner')
         fname_csv   = fname.with_suffix('.csv')
         para.to_csv(fname_csv, index=False)
-        '''
 
         return maps
 

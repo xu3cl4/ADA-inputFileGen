@@ -47,7 +47,7 @@ def main():
 
     # sample from the parameter space 
     # params is a list of parameter maps
-    params = getParams(n, ipt, args.s)
+    params = getParams(n, ipt, args.s, tpl_xml)
 
     # use parallelism to write xml files 
     nc = min(n, ncpu())
