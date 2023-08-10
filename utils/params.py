@@ -89,13 +89,13 @@ def getParams_yml(nsim, fin, seed, path_to_csv):
 def getParams_csv(fin):
     
     params = pd.read_csv(fin)
-    params_amanzi = df.columns[~params.columns.str.contains("seepage")]
-    params_pflo   = df.columns[params.columns.str.contains("seepage")] 
+    params_amanzi = params.columns[~params.columns.str.contains("seepage")]
+    params_pflo   = params.columns[params.columns.str.contains("seepage")] 
 
     def make_map(row):
         mapping = {}
         mapping['amanzi'] = dict(zip(params_amanzi, row[params_amanzi]))
-        mapping['amanzi'] = dict(zip(params_pflo, row[params_pflo]))
+        mapping['pflo'] = dict(zip(params_pflo, row[params_pflo]))
         return mapping 
 
     maps = (params.apply(make_map, axis=1)).tolist()

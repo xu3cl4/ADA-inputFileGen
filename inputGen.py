@@ -1,6 +1,7 @@
 # import from built-in modules 
 from argparse import ArgumentParser, RawTextHelpFormatter as RT
 from joblib   import Parallel, delayed
+from math     import inf
 from os       import cpu_count as ncpu
 from pathlib  import Path
 from shutil   import copy2 as cp
@@ -17,13 +18,12 @@ def getArguments():
     ''' parse the command-line interface
         the command line takes four required arguments  
 
-        n : number of xml files
         ipt: the file path to the parameter map
         tpl_xml: the xml template 
         opt: the directory to output the xml files
     '''  
     parser = ArgumentParser(formatter_class=RT)
-    parser.add_argument('n',         type = int, help="the number of parameter samples, each of which leads to a xml file")
+    parser.add_argument('-n',        type = int, help="the number of parameter samples, each of which leads to a xml file (only needed when sampling from fixed ranges)", default=inf)
     parser.add_argument('ipt',       type = str, help="the file path to a .yaml/yml or .csv parameter map in the parameters folder")
     parser.add_argument('tpl_xml',   type = str, help="the file path to a xml template in the template folder")
     parser.add_argument('-tpl_pflo', type = str, help="the file path to a xml template in the template folder",                         default ="")
@@ -38,7 +38,7 @@ def main():
     ''' the basic structure of the python scripts '''  
     args = getArguments()
 
-    n        = args.n
+    n        = args.n 
     ipt      = DIR.joinpath(args.ipt)
     tpl_xml  = DIR.joinpath(args.tpl_xml)
     tpl_pflo = DIR.joinpath(args.tpl_pflo) if len(args.tpl_pflo) != 0 else None
@@ -50,7 +50,8 @@ def main():
     params = getParams(n, ipt, args.s, tpl_xml)
 
     # use parallelism to write xml files 
-    nc = min(n, ncpu())
+    nc = int(min(n, ncpu()))
+    n = len(params)
     Parallel(n_jobs=nc, verbose=1, backend="multiprocessing")\
             (delayed(create_files)(
                     template_xml=tpl_xml, template_pflo=tpl_pflo, param_map=params[i], idx=i+1, dout=opt, year=args.y 
