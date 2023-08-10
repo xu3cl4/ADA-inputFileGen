@@ -86,7 +86,7 @@ def getParams_yml(nsim, fin, seed, path_to_csv):
         
         return maps 
 
-def getParams_csv(fin):
+def getParams_csv(fin, tpl):
     
     params = pd.read_csv(fin)
 
@@ -101,12 +101,12 @@ def getParams_csv(fin):
 
     def make_map_tri(row):
         mapping = {}
-        mapping['amanzi'] = dict(zip(params.column, row))
+        mapping['amanzi'] = dict(zip(params.columns, row))
         return mapping 
     
     map_choice = {'full_chemistry': make_map_fc, 'tritium': make_map_tri}
-    mapchoice = 'full_chemistry' if 'full_chemistry' in fin.stem else 'tritium'
-    maps = (params.apply(make_map[mapchoice], axis=1)).tolist()
+    choice = 'full_chemistry' if 'full_chemistry' in tpl.stem else 'tritium'
+    maps = (params.apply(map_choice[choice], axis=1)).tolist()
     return maps
 
 def getParams(nsim, fin, seed, path_to_csv):
@@ -114,7 +114,7 @@ def getParams(nsim, fin, seed, path_to_csv):
     dispatch = {
             '.yml':  lambda n, f, s, p: getParams_yml(n, f, s, p), 
             '.yaml': lambda n, f, s, p: getParams_yml(n, f, s, p), 
-            '.csv':  lambda n, f, s, p: getParams_csv(f)
+            '.csv':  lambda n, f, s, p: getParams_csv(f, p)
             }
     
     return dispatch[fin.suffix](nsim, fin, seed, path_to_csv)
