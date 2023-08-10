@@ -89,16 +89,24 @@ def getParams_yml(nsim, fin, seed, path_to_csv):
 def getParams_csv(fin):
     
     params = pd.read_csv(fin)
-    params_amanzi = params.columns[~params.columns.str.contains("seepage")]
-    params_pflo   = params.columns[params.columns.str.contains("seepage")] 
 
-    def make_map(row):
+    def make_map_fc(row):
+        params_amanzi = params.columns[~params.columns.str.contains("seepage")]
+        params_pflo   = params.columns[params.columns.str.contains("seepage")] 
+            
         mapping = {}
         mapping['amanzi'] = dict(zip(params_amanzi, row[params_amanzi]))
         mapping['pflo'] = dict(zip(params_pflo, row[params_pflo]))
         return mapping 
 
-    maps = (params.apply(make_map, axis=1)).tolist()
+    def make_map_tri(row):
+        mapping = {}
+        mapping['amanzi'] = dict(zip(params.column, row))
+        return mapping 
+    
+    map_choice = {'full_chemistry': make_map_fc, 'tritium': make_map_tri}
+    mapchoice = 'full_chemistry' if 'full_chemistry' in fin.stem else 'tritium'
+    maps = (params.apply(make_map[mapchoice], axis=1)).tolist()
     return maps
 
 def getParams(nsim, fin, seed, path_to_csv):
