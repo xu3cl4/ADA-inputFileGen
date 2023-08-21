@@ -57,7 +57,7 @@ def create_xml(template_xml, param_map, idx, dout, year):
             tpl_str = tpl_str.replace('@r_after@', str(param_map[key]/1000))
 
     # replace recharge value 
-    factor = param_map['@ET_factor@'] 
+    factor = param_map['@ET_factor@'] if '@ET_factor' in param_map else None
     if factor is not None:
         # Date, prcp
         df_prcp = pd.read_csv(PATH_prcp)
@@ -82,8 +82,7 @@ def create_xml(template_xml, param_map, idx, dout, year):
         r_right, r_left, r_seepage = '', '', ''
         for ind, row in matched.iterrows():
             s = f'\t\t<inward_mass_flux function="constant" start="{row["Timestamp"]}" value="{row["recharge"]}"/>\n'
-            r_right += s
-            # r_right += f'\t\t<seepage_face function="constant" start="{row["Timestamp"]}" inward_mass_flux="{row["recharge"]}"/>\n' 
+            r_right += f'\t\t<seepage_face function="constant" start="{row["Timestamp"]}" inward_mass_flux="{row["recharge"]}"/>\n' 
             r_left += s
             if row["Timestamp"] >= ref_1989: 
                 r_seepage += f'\t\t<inward_mass_flux function="constant" start="{row["Timestamp"]}" value="{row["recharge"]/1000}"/>\n'

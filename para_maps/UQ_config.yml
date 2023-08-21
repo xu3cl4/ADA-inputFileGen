@@ -25,13 +25,13 @@ amanzi:
   "@r_mid@":
     low: 1.0e-4
     up: 2.5e-4
-  "@ET_factor@": 
-    low: 0.8
-    up: 1.2
+    #"@ET_factor@": 
+    # low: 0.8
+    # up: 1.2
 pflo: 
   "@ph_seepage@":
-    low: 1.364
-    up: 1.841
+    low: 1.14206
+    up: 1.61918
   "@tri_conc_seepage@":
     low: 1.0e-9
     up: 1.0e-8
